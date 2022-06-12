@@ -1,0 +1,90 @@
+import React, { useState } from "react";
+import logo from "../../public/images/logo.svg";
+import hamburger from "../../public/images/hamburger.png";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleClick() {
+    setIsOpen(() => !isOpen);
+  }
+
+  return (
+    <header className="Header pt-10 pb-6 relative">
+      <div className="flex justify-between">
+        <div className="Header__left">
+          <nav className="Navbar__menu--desktop">
+            <ul className="flex font-bold text-neutralGray md:w-[26.875rem] justify-between ">
+              <li className="Header__logo--desktop">
+                <Image src={logo} alt="company-logo" data-testid="logo" />
+              </li>
+              <div className="hidden md:contents">
+                <li className="hover:text-primaryDarkViolet">
+                  <Link href="#">Features</Link>
+                </li>
+                <li className="hover:text-primaryDarkViolet">
+                  <Link href="#">Pricing</Link>
+                </li>
+                <li className="hover:text-primaryDarkViolet">
+                  <Link href="#">Resources</Link>
+                </li>
+              </div>
+            </ul>
+          </nav>
+        </div>
+        <div className="Header__right">
+          <div onClick={handleClick} className="md:hidden">
+            <Image
+              src={hamburger}
+              alt="dropdown menu icon"
+              data-testid="hamburger"
+            />
+          </div>
+          <nav className="Header__buttons--desktop hidden md:contents">
+            <ul className="flex justify-between w-48 font-bold">
+              <li className="text-neutralGray hover:text-primaryDarkViolet">
+                <Link href="#">Login</Link>
+              </li>
+              <li className="">
+                <div className="bg-primaryCyan rounded-3xl py-2 px-6 text-white relative bottom-2 hover:opacity-60">
+                  <Link href="#">Sign Up</Link>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      {/* Dropdown menu for mobile displays */}
+      <nav
+        className={`Navbar__menu--mobile ${
+          isOpen ? "" : "hidden"
+        } bg-primaryDarkViolet mt-6 z-50 rounded-lg absolute w-full`}
+        data-testid="menu-test"
+      >
+        <ul className="text-white text-center font-bold text-lg">
+          <li className="pt-10">
+            <Link href="#">Features</Link>
+          </li>
+          <li className="pt-7">
+            <Link href="#">Pricing</Link>
+          </li>
+          <li className="py-7 border-b border-neutralGray border-opacity-25 mx-6">
+            <Link href="#">Resources</Link>
+          </li>
+
+          <li className="pt-8">
+            <Link href="#">Login</Link>
+          </li>
+          <li className="pt-6 pb-10 flex justify-center">
+            <div className="bg-primaryCyan py-2 w-[85%] rounded-3xl">
+              <Link href="#">Sign Up</Link>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
