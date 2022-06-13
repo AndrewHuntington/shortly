@@ -17,6 +17,6 @@ describe("Header", () => {
 
   test("Should show dropdown menu", () => {
     render(<Header />);
-    screen.getByTestId("menu-test");
+    screen.getByTestId("dropdown-menu");
   });
 });

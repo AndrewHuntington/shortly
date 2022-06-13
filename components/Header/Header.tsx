@@ -61,7 +61,7 @@ export default function Header() {
         className={`Navbar__menu--mobile ${
           isOpen ? "" : "hidden"
         } bg-primaryDarkViolet mt-6 z-50 rounded-lg absolute w-full`}
-        data-testid="menu-test"
+        data-testid="dropdown-menu"
       >
         <ul className="text-white text-center font-bold text-lg">
           <li className="pt-10">
