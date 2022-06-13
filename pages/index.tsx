@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Navbar />
+    <div className="App__container px-6">
+      <Header />
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
+    </div>
   );
 };
 
