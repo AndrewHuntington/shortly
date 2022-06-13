@@ -58,12 +58,10 @@ export default function Header() {
 
       {/* Dropdown menu for mobile displays */}
       <nav
-        className={`Navbar__menu--mobile ${
-          isOpen ? "" : "hidden"
-        } bg-primaryDarkViolet mt-6 z-50 rounded-lg absolute w-full`}
+        className={`Navbar__menu--mobile ${isOpen ? "" : "hidden"}  mt-6 `}
         data-testid="dropdown-menu"
       >
-        <ul className="text-white text-center font-bold text-lg">
+        <ul className="text-white text-center font-bold text-lg w-[95%] bg-primaryDarkViolet rounded-lg z-50 absolute left-2.5">
           <li className="pt-10">
             <Link href="#">Features</Link>
           </li>
