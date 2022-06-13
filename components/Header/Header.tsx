@@ -11,7 +11,7 @@ export default function Header() {
   }
 
   return (
-    <header className="Header pt-10 pb-6 relative">
+    <header className="Header pt-10 pb-6 px-6 relative">
       <div className="flex justify-between">
         <div className="Header__left">
           <nav className="Navbar__menu--desktop">
