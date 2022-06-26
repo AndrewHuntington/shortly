@@ -3,6 +3,9 @@ import { logo, hamburger } from "../../public/images/";
 import Image from "next/image";
 import Link from "next/link";
 
+// TODO: Separate out the header and navbar into separate components
+// TODO: Pass logo and menu items as props from the Header component
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,25 +14,23 @@ export default function Header() {
   }
 
   return (
-    <header className="Header pt-10 pb-6 px-6 relative">
+    <header className="relative px-6 pt-10 pb-2 Header">
       <div className="flex justify-between">
-        <div className="Header__left">
+        <div className="flex Header__left">
+          <div className="mr-11 Header__logo">
+            <Image src={logo} alt="company-logo" data-testid="logo" />
+          </div>
           <nav className="Navbar__menu--desktop">
-            <ul className="flex font-bold text-neutralGray md:w-[26.875rem] justify-between ">
-              <li className="Header__logo">
-                <Image src={logo} alt="company-logo" data-testid="logo" />
+            <ul className="hidden md:flex font-bold text-neutralGray md:w-[26.875rem]">
+              <li className="hover:text-primaryDarkViolet mr-7">
+                <Link href="#">Features</Link>
               </li>
-              <div className="hidden md:contents">
-                <li className="hover:text-primaryDarkViolet">
-                  <Link href="#">Features</Link>
-                </li>
-                <li className="hover:text-primaryDarkViolet">
-                  <Link href="#">Pricing</Link>
-                </li>
-                <li className="hover:text-primaryDarkViolet">
-                  <Link href="#">Resources</Link>
-                </li>
-              </div>
+              <li className="hover:text-primaryDarkViolet mr-7">
+                <Link href="#">Pricing</Link>
+              </li>
+              <li className="hover:text-primaryDarkViolet">
+                <Link href="#">Resources</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -41,13 +42,13 @@ export default function Header() {
               data-testid="hamburger"
             />
           </div>
-          <nav className="Header__buttons--desktop hidden md:contents">
+          <nav className="hidden Header__buttons--desktop md:contents">
             <ul className="flex justify-between w-48 font-bold">
               <li className="text-neutralGray hover:text-primaryDarkViolet">
                 <Link href="#">Login</Link>
               </li>
               <li className="">
-                <div className="bg-primaryCyan rounded-3xl py-2 px-6 text-white relative bottom-2 hover:opacity-60">
+                <div className="relative px-6 py-2 text-white bg-primaryCyan rounded-3xl bottom-2 hover:opacity-60">
                   <Link href="#">Sign Up</Link>
                 </div>
               </li>
@@ -68,14 +69,14 @@ export default function Header() {
           <li className="pt-7">
             <Link href="#">Pricing</Link>
           </li>
-          <li className="py-7 border-b border-neutralGray border-opacity-25 mx-6">
+          <li className="mx-6 border-b border-opacity-25 py-7 border-neutralGray">
             <Link href="#">Resources</Link>
           </li>
 
           <li className="pt-8">
             <Link href="#">Login</Link>
           </li>
-          <li className="pt-6 pb-10 flex justify-center">
+          <li className="flex justify-center pt-6 pb-10">
             <div className="bg-primaryCyan py-2 w-[85%] rounded-3xl">
               <Link href="#">Sign Up</Link>
             </div>

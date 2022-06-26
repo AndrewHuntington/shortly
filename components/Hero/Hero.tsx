@@ -5,13 +5,14 @@ import { illustrationWorking } from "../../public/images";
 export default function Hero() {
   return (
     <div className="Hero">
-      <div className="Hero__image">
+      <div className="overflow-visible Hero__image">
         <Image
           src={illustrationWorking}
           alt="person sitting at desktop typing on a computer"
+          className="scale-150 translate-x-28"
         />
       </div>
-      <div className="Hero__copy px-6 text-center mt-7">
+      <div className="px-6 text-center Hero__copy mt-7">
         <h1 className="font-bold text-[2.625rem] tracking-[-0.07rem] leading-[3rem] text-primaryDarkViolet">
           More than just shorter links
         </h1>
