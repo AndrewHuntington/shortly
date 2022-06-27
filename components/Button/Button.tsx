@@ -1,5 +1,8 @@
 import React from "react";
 
+// TODO: Fill out as more button variations are needed
+// TODO: Add hover and disabled (?) styles
+
 interface ButtonProps {
   text: string;
   type?: "button" | "submit" | "reset" | undefined;
