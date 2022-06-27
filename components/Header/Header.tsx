@@ -5,6 +5,7 @@ import Link from "next/link";
 
 // TODO: Separate out the header and navbar into separate components
 // TODO: Pass logo and menu items as props from the Header component
+// TODO: Try to combine the two nav elements into one before refactoring
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
